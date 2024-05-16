@@ -19,7 +19,7 @@ const LoginPage = () => {
         console.log(response.data);
         if (!response.data.err) {
           dispatch({ type: 'refresh' });
-          return locationreload();
+          return navigate("/programs");
          
         } else {
           seterr(response.data.message);
@@ -35,14 +35,7 @@ const LoginPage = () => {
   };
 
 
-  const locationreload = () =>{
-
-    window.location.href = "/programs"
-    setTimeout(()=>{
-      window.location.reload()
-    },1000)
-    
-  }
+  
 
   return (
     <div className="full-page">
