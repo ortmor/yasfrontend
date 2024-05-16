@@ -47,7 +47,6 @@ const App = () => {
         console.log(error);
       });
   }, [refresh, dispatch]);
-  console.log(user, "user");
   return (
     <Router>
       <div className="app-container">
@@ -92,7 +91,7 @@ const App = () => {
           )}
           <Route
             path="*"
-            element={user.login ? <Navigate to="/about" /> : <PageNotFound />}
+            element={user.login ? <Navigate to="/" /> : <PageNotFound />}
           />
         </Routes>
       </div>
