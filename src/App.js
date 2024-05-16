@@ -59,7 +59,20 @@ const App = () => {
     <Router>
       <div className="app-container">
         <Routes>
-        <Route path="/about-page-details" element={<AboutPageDetails />} />
+
+          {/* <Route path="" element={<UnprotectedRoute />}> */}
+          <Route path="/" element={<WelcomePage />} />
+            <Route path="/registration" element={<RegistrationForm />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/thank-you" element={<ThankyouPage />} />
+          {/* </Route> */}
+
+          <Route path="" element={<PrivateRoute />}>
+            <Route path="/about" element={<AboutProgram />} />
+            <Route path="/programs" element={<Programs />} />
+            <Route path="/video" element={<VideoPage />} />
+            <Route path="/qr-scanner" element={<QrScannerPage />} />
+            <Route path="/about-page-details" element={<AboutPageDetails />} />
             <Route
               path="/about-page-details-2"
               element={<AboutPageDetails2 />}
@@ -72,19 +85,6 @@ const App = () => {
               path="/about-page-details-4"
               element={<AboutPageDetails4 />}
             />
-          <Route path="" element={<UnprotectedRoute />}>
-          <Route path="/" element={<WelcomePage />} />
-            <Route path="/registration" element={<RegistrationForm />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/thank-you" element={<ThankyouPage />} />
-          </Route>
-
-          <Route path="" element={<PrivateRoute />}>
-            <Route path="/about" element={<AboutProgram />} />
-            <Route path="/programs" element={<Programs />} />
-            <Route path="/video" element={<VideoPage />} />
-            <Route path="/qr-scanner" element={<QrScannerPage />} />
-          
             <Route path="/about-program" element={<AboutProgram />} />
             <Route path="/about-program-2" element={<AboutProgram2 />} />
             <Route path="/about-program-3" element={<AboutProgram3 />} />
