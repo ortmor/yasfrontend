@@ -20,7 +20,7 @@ import { useEffect } from "react";
 import AboutPageDetails2 from "./components/AboutPageDetails2";
 import AboutPageDetails3 from "./components/AboutPageDetails3";
 import AboutPageDetails4 from "./components/AboutPageDetails4";
-import QRScanner from "./components/QRScanner";
+import QRScanner from "./components/QrScannerPage";
 
 const App = () => {
   const { user, refresh } = useSelector((state) => state);
