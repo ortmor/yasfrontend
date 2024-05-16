@@ -106,7 +106,7 @@ import PageNotFound1 from "./components/PageNotFound1";
 const App = () => {
   const { user, refresh } = useSelector((state) => state);
   const dispatch = useDispatch();
-  const [checkAuth, setCheckAuth] = useState(false);
+  const [checkAuth, setCheckAuth] = useState(true);
 
   useEffect(() => {
     axios
