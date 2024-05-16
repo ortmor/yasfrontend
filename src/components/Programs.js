@@ -30,7 +30,9 @@ const Programs = () => {
   const { user } = useSelector((state) => state);
   const userId = user?.details?._id;
 
+console.log(user,"userpro");
   useEffect(() => {
+    console.log(userId,user.details,"_____________________");
     if(!userId)return
     
     axios
@@ -48,6 +50,7 @@ const Programs = () => {
       .catch((error) => {
         console.error("Error fetching results:", error);
       });
+
   }, [userId]);
 
   const userData = user?.details?.email;

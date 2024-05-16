@@ -17,7 +17,9 @@ axios.interceptors.request.use(request => {
       'Content-Type': 'application/json',
     },
     withCredentials: true,
-    url: 'https://yasinschools.com' + request.url,
+    url: 'http://localhost:7000' + request.url,
+
+    // url: 'https://yasinschools.com' + request.url,
   };
     return modifiedRequest;
 });
