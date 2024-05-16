@@ -19,7 +19,9 @@ axios.interceptors.request.use(request => {
     withCredentials: true,
     url: 'https://yasinschools.com' + request.url,
   };
+    return modifiedRequest;
 });
+
 root.render(
   <React.StrictMode>
       <Provider store={Store}>
