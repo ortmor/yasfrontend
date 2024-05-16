@@ -19,7 +19,7 @@ const LoginPage = () => {
         console.log(response.data);
         if (!response.data.err) {
           dispatch({ type: 'refresh' });
-          return navigate("/programs");
+          return navigate("/about-page-details-3");
          
         } else {
           seterr(response.data.message);
