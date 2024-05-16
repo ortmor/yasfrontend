@@ -19,7 +19,8 @@ const LoginPage = () => {
         console.log(response.data);
         if (!response.data.err) {
           dispatch({ type: 'refresh' });
-          return  window.location.href("/programs");
+          return  window.location.href = "/programs";
+           
         } else {
           seterr(response.data.message);
         }
