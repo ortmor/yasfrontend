@@ -62,7 +62,7 @@ const App = () => {
           ) : (
             <>{/* <Route path="/" element={<Navigate to="/about" />} /> */}</>
           )}
-          {user.login && (
+          {user.login==true && (
             <>
               <Route path="/about" element={<AboutProgram />} />
               <Route path="/programs" element={<Programs />} />
