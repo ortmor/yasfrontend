@@ -46,7 +46,8 @@ const App = () => {
       .catch((error) => {
         console.log(error);
       });
-  }, [refresh, dispatch]);
+  }, [refresh,user, dispatch]);
+  console.log(user, "user");
   return (
     <Router>
       <div className="app-container">
@@ -61,7 +62,7 @@ const App = () => {
           ) : (
             <>{/* <Route path="/" element={<Navigate to="/about" />} /> */}</>
           )}
-          {user.login == true && (
+          {user.login==true && (
             <>
               <Route path="/about" element={<AboutProgram />} />
               <Route path="/programs" element={<Programs />} />
@@ -89,10 +90,7 @@ const App = () => {
               <Route path="/about-program-4" element={<AboutProgram4 />} />
             </>
           )}
-          <Route
-            path="*"
-            element={user.login ? <Navigate to="/" /> : <PageNotFound />}
-          />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </div>
     </Router>
