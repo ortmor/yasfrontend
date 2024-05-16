@@ -90,7 +90,7 @@ const App = () => {
               <Route path="/about-program-4" element={<AboutProgram4 />} />
             </>
           )}
-          <Route path="*" element={<PageNotFound />} />
+          {/* <Route path="*" element={<PageNotFound />} /> */}
         </Routes>
       </div>
     </Router>
