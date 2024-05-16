@@ -2,7 +2,7 @@
 import { createStore } from "redux";
 
 const initialState = {
-  user: { login: null },
+  user: { login: false },
   refresh: true,
 };
 console.log(initialState,"initialState");

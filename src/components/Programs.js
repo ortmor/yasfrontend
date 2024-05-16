@@ -28,9 +28,11 @@ const Programs = () => {
   };
 
   const { user } = useSelector((state) => state);
-  const userId = user.details._id;
+  const userId = user?.details?._id;
 
   useEffect(() => {
+    if(!userId)return
+    
     axios
       .get(`/resultUser/${userId}`)
       .then((response) => {
@@ -46,10 +48,10 @@ const Programs = () => {
       .catch((error) => {
         console.error("Error fetching results:", error);
       });
-  }, []);
+  }, [userId]);
 
-  const userData = user.details.email;
-  const code = user.details.uniqueCode;
+  const userData = user?.details?.email;
+  const code = user?.details?.uniqueCode;
 
    const handleLogout = () => {
    
