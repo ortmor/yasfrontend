@@ -46,7 +46,7 @@ const App = () => {
       .catch((error) => {
         console.log(error);
       });
-  }, [refresh,user, dispatch]);
+  }, [refresh, dispatch]);
   console.log(user, "user");
   return (
     <Router>
