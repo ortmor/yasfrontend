@@ -138,8 +138,10 @@ const App = () => {
               <Route path="/thank-you" element={<ThankyouPage />} />
             </>
           ) : (
-            <Route path="/" element={<Navigate to="/about" />} />
-          )}
+            // <Route path="/" element={<Navigate to="/about" />} />
+            <></>
+          )
+          }
           {user.login && (
             <>
               <Route path="/about" element={<AboutProgram />} />
