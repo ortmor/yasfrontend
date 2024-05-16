@@ -19,7 +19,6 @@ import AboutPageDetails from "./components/AboutPageDetails";
 import AboutProgram2 from "./components/AboutProgram2";
 import AboutProgram3 from "./components/AboutProgram3";
 import AboutProgram4 from "./components/AboutProgram4";
-import PostVideoPage from "./components/PostVideoPage";
 import AboutPageDetails2 from "./components/AboutPageDetails2";
 import AboutPageDetails3 from "./components/AboutPageDetails3";
 import AboutPageDetails4 from "./components/AboutPageDetails4";
@@ -89,7 +88,6 @@ const App = () => {
               <Route path="/about-program-2" element={<AboutProgram2 />} />
               <Route path="/about-program-3" element={<AboutProgram3 />} />
               <Route path="/about-program-4" element={<AboutProgram4 />} />
-              <Route path="/post-video" element={<PostVideoPage />} />
             </>
           )}
           <Route path="*" element={<PageNotFound />} />
