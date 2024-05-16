@@ -19,8 +19,8 @@ const LoginPage = () => {
         console.log(response.data);
         if (!response.data.err) {
           dispatch({ type: 'refresh' });
-          return  window.location.href = "/programs";
-           
+          return locationreload();
+         
         } else {
           seterr(response.data.message);
         }
@@ -33,6 +33,16 @@ const LoginPage = () => {
       seterr('All fields are required');
     }
   };
+
+
+  const locationreload = () =>{
+
+    window.location.href = "/programs"
+    setTimeout(()=>{
+      window.location.reload()
+    },1000)
+    
+  }
 
   return (
     <div className="full-page">
