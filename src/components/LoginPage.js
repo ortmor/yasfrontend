@@ -19,7 +19,8 @@ const LoginPage = () => {
         console.log(response.data);
         if (!response.data.err) {
           dispatch({ type: 'refresh' });
-          return navigate('/programs');
+          return navigate("/programs");
+         
         } else {
           seterr(response.data.message);
         }
@@ -32,6 +33,9 @@ const LoginPage = () => {
       seterr('All fields are required');
     }
   };
+
+
+  
 
   return (
     <div className="full-page">
