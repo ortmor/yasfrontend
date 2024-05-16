@@ -123,7 +123,7 @@ const App = () => {
       .catch((error) => {
         console.log(error);
       })
-      .finally(() => setCheckAuth(true));
+      .finally(() => setCheckAuth(false));
   }, [refresh, dispatch]);
 
   return (
