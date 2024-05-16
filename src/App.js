@@ -62,7 +62,7 @@ const App = () => {
           ) : (
             <>{/* <Route path="/" element={<Navigate to="/about" />} /> */}</>
           )}
-          {user.login==true && (
+          {user.login == true && (
             <>
               <Route path="/about" element={<AboutProgram />} />
               <Route path="/programs" element={<Programs />} />
@@ -90,7 +90,10 @@ const App = () => {
               <Route path="/about-program-4" element={<AboutProgram4 />} />
             </>
           )}
-          <Route path="*" element={<PageNotFound />} />
+          <Route
+            path="*"
+            element={user.login ? <Navigate to="/about" /> : <PageNotFound />}
+          />
         </Routes>
       </div>
     </Router>
