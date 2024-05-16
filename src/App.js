@@ -99,9 +99,9 @@ import AboutProgram4 from "./components/AboutProgram4";
 import AboutPageDetails2 from "./components/AboutPageDetails2";
 import AboutPageDetails3 from "./components/AboutPageDetails3";
 import AboutPageDetails4 from "./components/AboutPageDetails4";
-import PageNotFound from "./components/PageNotFound";
 import LoginPage from "./components/LoginPage";
 import QrScannerPage from "./components/QrScannerPage";
+import PageNotFound1 from "./components/PageNotFound1";
 
 const App = () => {
   const { user, refresh } = useSelector((state) => state);
@@ -156,7 +156,8 @@ const App = () => {
               <Route path="/about-program-4" element={<AboutProgram4 />} />
             </>
           )}
-          {checkAuth && <Route path="*" element={<PageNotFound />} />}
+          {checkAuth && 
+          <Route path="*" element={<PageNotFound1 />} />}
         </Routes>
       </div>
     </Router>
