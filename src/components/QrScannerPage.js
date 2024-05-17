@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React, { useState } from 'react';
-import QrScanner from 'react-qr-scanner';
+import QrReader from 'react-qr-reader';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Programs.css'; // Adjust the path if needed
 
@@ -10,7 +10,7 @@ const QrScannerPage = () => {
 
   const handleScan = (data) => {
     if (data) {
-      window.location.href = data; // Redirect to the URL encoded in the QR code
+      window.location.href = data; 
     }
   };
 
@@ -27,12 +27,12 @@ const QrScannerPage = () => {
   return (
     <div className="qr-scanner-container">
       <h2>Scan QR</h2>
-      <QrScanner
+      <QrReader
         delay={300}
         style={previewStyle}
         onError={handleError}
         onScan={handleScan}
-        facingMode="environment" // Use back camera
+        facingMode="environment"
       />
       {scanError && <p style={{ color: 'red' }}>{scanError}</p>}
       <button onClick={() => navigate(-1)} >Cancel</button>
