@@ -1,11 +1,12 @@
 /* eslint-disable */
 import React, { useState } from 'react';
-import QrReader from 'react-qr-reader';
+import QrScanner from 'react-qr-scanner';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Programs.css'; // Adjust the path if needed
 
 const QrScannerPage = () => {
   const [scanError, setScanError] = useState(null);
+  const [facingMode, setFacingMode] = useState('environment'); // Default to back camera
   const navigate = useNavigate();
 
   const handleScan = (data) => {
@@ -19,6 +20,10 @@ const QrScannerPage = () => {
     setScanError(err.message);
   };
 
+  const toggleFacingMode = () => {
+    setFacingMode(prevMode => (prevMode === 'environment' ? 'user' : 'environment'));
+  };
+
   const previewStyle = {
     height: 240,
     width: 320,
@@ -27,15 +32,18 @@ const QrScannerPage = () => {
   return (
     <div className="qr-scanner-container">
       <h2>Scan QR</h2>
-      <QrReader
+      <QrScanner
         delay={300}
         style={previewStyle}
         onError={handleError}
         onScan={handleScan}
-        facingMode="environment"
+        facingMode={facingMode} // Dynamic facing mode
       />
       {scanError && <p style={{ color: 'red' }}>{scanError}</p>}
-      <button onClick={() => navigate(-1)} >Cancel</button>
+      <button onClick={toggleFacingMode}>
+        {facingMode === 'environment' ? 'Switch to Front Camera' : 'Switch to Back Camera'}
+      </button>
+      <button onClick={() => navigate(-1)}>Cancel</button>
     </div>
   );
 };
