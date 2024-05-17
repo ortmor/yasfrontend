@@ -16,6 +16,7 @@ const LoginPage = () => {
     if (email.trim()) {
       try {
         const response = await axios.post("/login", { email });
+        console.log(response.data,"response");
         if (!response.data.err) {
           if(response.data.login){
 
@@ -28,7 +29,8 @@ const LoginPage = () => {
             });
             return navigate("/programs");
           }else{
-            alert(response.data.message)
+            // alert(response.data.message)
+            console.log(response.data.message,"response.data.message");
           }
 
         } else {
@@ -37,7 +39,7 @@ const LoginPage = () => {
         }
       } catch (error) {
         console.log(error);
-        alert("An error occurred during log in. Please try again.");
+        // alert("An error occurred during log in. Please try again.");
       }
     } else {
       seterr("All fields are required");
