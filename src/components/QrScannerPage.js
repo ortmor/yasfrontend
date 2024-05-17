@@ -6,7 +6,7 @@ import '../styles/Programs.css'; // Adjust the path if needed
 
 const QrScannerPage = () => {
   const [scanError, setScanError] = useState(null);
-  const [facingMode, setFacingMode] = useState('environment'); // Default to back camera
+  const [facingMode, setFacingMode] = useState('environment'); 
   const navigate = useNavigate();
 
   const handleScan = (data) => {
@@ -37,7 +37,7 @@ const QrScannerPage = () => {
         style={previewStyle}
         onError={handleError}
         onScan={handleScan}
-        facingMode={facingMode} // Dynamic facing mode
+        facingMode={facingMode} 
       />
       {scanError && <p style={{ color: 'red' }}>{scanError}</p>}
       <button onClick={toggleFacingMode}>

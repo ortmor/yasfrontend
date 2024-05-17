@@ -59,14 +59,27 @@ console.log(user,"userpro");
    const handleLogout = () => {
    
 
-    axios.post("/logout", { userData, completedProgramsCount: programNums, code }).then((response) => {
+    axios.post("/logout", { userData, completedProgramsCount: programNums, code })
+    .then((response) => {
       if (!response.data.err) {
+        // Clear cookies
+        clearCookies();
+        
         dispatch({ type: "refresh" });
         navigate("/thank-you");
       }
     });
-  };
-
+  
+  function clearCookies() {
+    const cookies = document.cookie.split("; ");
+    for (const cookie of cookies) {
+      const eqPos = cookie.indexOf("=");
+      const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+      document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/`;
+    }
+  }
+  
+   }
   return (
     <div className="programs-containermain">
       <div className="programs-container">
