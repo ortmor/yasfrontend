@@ -60,12 +60,12 @@ const App = () => {
       <div className="app-container">
         <Routes>
 
-          <Route path="" element={<UnprotectedRoute />}>
+          {/* <Route path="" element={<UnprotectedRoute />}> */}
           <Route path="/" element={<WelcomePage />} />
             <Route path="/registration" element={<RegistrationForm />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/thank-you" element={<ThankyouPage />} />
-          </Route>
+          {/* </Route> */}
 
           <Route path="" element={<PrivateRoute />}>
             <Route path="/about" element={<AboutProgram />} />
